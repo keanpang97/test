@@ -1,5 +1,5 @@
 pipeline {
-    agent { 
+    agent {
 		dockerfile {
 		    filename 'dockerfile.build'
 		}
