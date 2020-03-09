@@ -1,8 +1,8 @@
 pipeline {
     agent {
 		dockerfile {
-		    filename "dockerfile"
-			args "-t go"
+		    filename 'dockerfile'
+			args '-t go'
 		}
 	}
 	
