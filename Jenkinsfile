@@ -3,8 +3,9 @@ pipeline {
 	
     stages {
         stage('build') {
+			def image = docker.build("hello", "-f dockerfile")
             steps {
-				def image = docker.build("hello", "-f dockerfile")
+				
                 sh 'docker run hello:latest'
             }
         }
