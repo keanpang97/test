@@ -2,14 +2,14 @@ pipeline {
     agent {
 		dockerfile {
 		    filename 'dockerfile'
-			additionalBuildArgs '-t=go'
+			additionalBuildArgs '-t go'
 		}
 	}
 	
     stages {
         stage('build') {
             steps {
-                sh 'docker run go:latest'
+                sh 'docker exec go:latest'
             }
         }
     }
