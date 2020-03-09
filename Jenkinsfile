@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'docker run -d go:latest'
+                sh 'echo abc'
             }
         }
     }
