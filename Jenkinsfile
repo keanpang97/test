@@ -1,6 +1,6 @@
 pipeline {
     agent {
-		dockerfile {
+		docker {
 		    filename 'dockerfile'
 			additionalBuildArgs '-t go'
 			args '--entrypoint='
@@ -10,8 +10,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo abc'
-				sh 'sleep 50'
+                sh 'go version'
             }
         }
     }
