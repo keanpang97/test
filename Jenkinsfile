@@ -1,8 +1,7 @@
 pipeline {
-    agent none
+    agent any
 	
     stages {
-		agent none
         stage('build') {
             steps {
                 sh 'docker build -f dockerfile -t go'
