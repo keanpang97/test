@@ -1,12 +1,15 @@
 pipeline {
     agent {
-		dockerfile true
+		dockerfile {
+		    filename 'dockerfile'
+			args '-t=go'
+		}
 	}
 	
     stages {
         stage('build') {
             steps {
-                echo 'success'
+                sh 'docker run go:latest'
             }
         }
     }
