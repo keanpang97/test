@@ -1,16 +1,11 @@
 pipeline {
-    agent {
-		dockerfile {
-		    filename 'dockerfile'
-			additionalBuildArgs '-t go'
-			args '--entrypoint='
-		}
-	}
+    agent none
 	
     stages {
         stage('build') {
             steps {
-                sh 'go version'
+                sh 'docker build -f dockerfile -t go'
+				sh 'docker run go:latest'
             }
         }
     }
