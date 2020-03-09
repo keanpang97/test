@@ -1,6 +1,6 @@
 pipeline {
     agent {
-		docker {
+		dockerfile {
 		    filename 'dockerfile'
 			additionalBuildArgs '-t go'
 			args '--entrypoint='
