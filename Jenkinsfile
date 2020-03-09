@@ -1,15 +1,11 @@
 pipeline {
-    agent {
-		dockerfile {
-		    filename 'dockerfile'
-			label 'go'
-		}
-	}
+    agent none
 	
     stages {
         stage('build') {
             steps {
-                sh 'docker run go:latest'
+				def image = docker.build("hello", "-f dockerfile")
+                sh 'docker run hello:latest'
             }
         }
     }
