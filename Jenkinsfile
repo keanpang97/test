@@ -2,7 +2,7 @@ pipeline {
     agent {
 		dockerfile {
 		    filename 'dockerfile'
-			tag 'go'
+			label 'go'
 		}
 	}
 	
