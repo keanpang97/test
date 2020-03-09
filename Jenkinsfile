@@ -11,6 +11,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo abc'
+				sh 'sleep 50'
             }
         }
     }
