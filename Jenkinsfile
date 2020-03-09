@@ -3,6 +3,7 @@ pipeline {
 		dockerfile {
 		    filename 'dockerfile'
 			additionalBuildArgs '-t go'
+			args '--entrypoint='
 		}
 	}
 	
