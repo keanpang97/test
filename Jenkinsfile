@@ -6,7 +6,7 @@ pipeline {
     agent any
 	
     stages {
-		stage('Checkout) {
+		stage('Checkout') {
 			steps {
 				sh 'docker system prune --volumes'
 				sh 'y'
