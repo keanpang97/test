@@ -8,8 +8,7 @@ pipeline {
     stages {
 		stage('Checkout') {
 			steps {
-				sh 'docker rm -vf $(docker ps -a -q)'
-				sh 'docker rmi -f $(docker images -a -q)'
+				sh 'docker system prune --volumes -f'
 			}
 		}
 		
