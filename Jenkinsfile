@@ -1,3 +1,5 @@
+def Skip
+
 pipeline {
 	environment {
 		registryCredential = 'dockerHub'
@@ -42,7 +44,7 @@ pipeline {
 		stage('read data') {
 			steps {
 				script {
-					def Skip = readFile('file.txt')
+					Skip = readFile('file.txt')
 					println(Skip)
 				}
 			}
