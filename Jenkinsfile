@@ -3,7 +3,7 @@ pipeline {
 		registryCredential = 'dockerHub'
 		tag = VersionNumber (
 			projectStartDate: '2018-01-01',
-			versionNumberString: '${YEARS_SINCE_PROJECT_START}.${BUILD_MONTH}.${BUILDS_THIS_MONTH}'
+			versionNumberString: '${YEARS_SINCE_PROJECT_START}.${BUILD_MONTH}.${BUILDS_ALL_TIME}'
 		)
 	}
   
