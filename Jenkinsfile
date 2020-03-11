@@ -10,7 +10,7 @@ pipeline {
 		tag2 = VersionNumber (
 			projectStartDate: '2020-01-01',
 			versionNumberString: '${YEARS_SINCE_PROJECT_START}.${BUILD_MONTH}.${BUILDS_ALL_TIME}',
-			versionPrefix: 'abc'
+			versionPrefix: 'c'
 		)
 	}
   
