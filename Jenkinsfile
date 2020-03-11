@@ -1,4 +1,4 @@
-def Skip = readfile('file')
+def Skip = readFile('file').trim
 
 pipeline {
 	environment {
