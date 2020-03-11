@@ -37,7 +37,9 @@ pipeline {
 				sh 'docker rmi keanpang97/jenkins_cicd_go:$tag'
 				sh 'docker rmi keanpang97/jenkins_cicd_go:latest'
 			}
-			
+		}
+		
+		stage('check condition') {
 			when {
 				expression { Skip == true}
 			}
