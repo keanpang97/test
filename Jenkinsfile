@@ -43,6 +43,7 @@ pipeline {
 			steps {
 				script {
 					def Skip = readFile('file.txt')
+					println(Skip)
 				}
 			}
 		}
@@ -51,7 +52,7 @@ pipeline {
 			when {
 				/*expression { Skip == 'true'}*/
 				
-				expression { ${Skip} == 'true'}
+				expression { "${Skip}" == 'true'}
 			}
 			steps {
 				sh 'docker run keanpang97/jenkins_cicd_go:latest'
