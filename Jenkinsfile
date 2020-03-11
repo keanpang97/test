@@ -9,6 +9,14 @@ pipeline {
   
     agent any
 	
+	parameters {
+		booleanParam (
+			name: 'Skip',
+			defaultValue: false,
+			description: 'Do you want to skip the Test stage?'
+		)
+	}
+	
     stages {
 		stage('Checkout') {
 			steps {
