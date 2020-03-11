@@ -1,5 +1,3 @@
-def Skip = readFile('file').trim
-
 pipeline {
 	environment {
 		registryCredential = 'dockerHub'
@@ -39,6 +37,10 @@ pipeline {
 				sh 'docker rmi keanpang97/jenkins_cicd_go:$tag'
 				sh 'docker rmi keanpang97/jenkins_cicd_go:latest'
 			}
+		}
+		
+		stage('read data') {
+			def Skip = readFile('file.txt').trim
 		}
 		
 		stage('check condition') {
