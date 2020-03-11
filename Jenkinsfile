@@ -40,8 +40,10 @@ pipeline {
 		}
 		
 		stage('read data') {
-			script {
-				def Skip = readFile('file.txt').trim
+			steps {
+				script {
+					def Skip = readFile('file.txt').trim
+				}
 			}
 		}
 		
