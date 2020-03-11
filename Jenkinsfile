@@ -1,8 +1,10 @@
 pipeline {
 	environment {
 		registryCredential = 'dockerHub'
-		projectStartDate = '2020-01-01'
-		tag = VersionNumber (versionNumberString: '${YEARS_SINCE_PROJECT_START}.${BUILD_MONTH}.${BUILDS_THIS_MONTH}')
+		tag = VersionNumber (
+			projectStartDate = '2020-01-01',
+			versionNumberString: '${YEARS_SINCE_PROJECT_START}.${BUILD_MONTH}.${BUILDS_THIS_MONTH}'
+		)
 	}
   
     agent any
