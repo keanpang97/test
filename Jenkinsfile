@@ -1,3 +1,5 @@
+def Skip = readfile('file')
+
 pipeline {
 	environment {
 		registryCredential = 'dockerHub'
@@ -9,13 +11,13 @@ pipeline {
   
     agent any
 	
-	parameters {
+	/*parameters {
 		booleanParam (
 			name: 'Skip',
 			defaultValue: false,
 			description: 'Do you want to skip the Test stage?'
 		)
-	}
+	}*/
 	
     stages {
 		stage('Checkout') {
@@ -41,7 +43,9 @@ pipeline {
 		
 		stage('check condition') {
 			when {
-				expression { Skip == 'true'}
+				/*expression { Skip == 'true'}*/
+				
+				expression { ${Skip} == 'true'}
 			}
 			steps {
 				sh 'docker run keanpang97/jenkins_cicd_go:latest'
