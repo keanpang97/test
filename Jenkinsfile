@@ -52,7 +52,7 @@ pipeline {
 			when {
 				/*expression { Skip == 'true'}*/
 				
-				expression { "${Skip}" == 'true'}
+				expression { Skip == 'true'}
 			}
 			steps {
 				sh 'docker run keanpang97/jenkins_cicd_go:latest'
