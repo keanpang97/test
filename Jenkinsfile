@@ -2,7 +2,8 @@ pipeline {
 	environment {
 		registryCredential = 'dockerHub'
 		tag = VersionNumber (
-			versionNumberString: '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_DAY}.${BUILDS_TODAY}'
+			versionNumberString: '${BUILD_YEAR}${BUILD_MONTH,XX}${BUILD_DAY}.${BUILDS_TODAY}',
+			versionPrefix: 'v'
 		)
 	}
   
