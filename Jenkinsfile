@@ -1,4 +1,4 @@
-def Skip = readFile('file.txt')
+def Skip
 
 pipeline {
 	environment {
@@ -44,6 +44,7 @@ pipeline {
 		stage('read data') {
 			steps {
 				script {
+					Skip = readFile('file.txt')
 					println(Skip)
 				}
 			}
