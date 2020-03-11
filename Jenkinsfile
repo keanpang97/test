@@ -36,7 +36,20 @@ pipeline {
 				sh 'docker rm testing'
 				sh 'docker rmi keanpang97/jenkins_cicd_go:$tag'
 				sh 'docker rmi keanpang97/jenkins_cicd_go:latest'
+			}
+			
+			when {
+				expression { Skip == true}
+			}
+			steps {
 				sh 'docker run keanpang97/jenkins_cicd_go:latest'
+            }
+			
+			when {
+				expression { Skip != true}
+			}
+			steps {
+				sh 'docker info'
             }
         }
     }
