@@ -13,6 +13,8 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				sh 'docker system prune --volumes -f'
+				sh 'docker rmi keanpang97/jenkins_cicd_go:1.3.20'
+				sh 'docker rmi keanpang97/jenkins_cicd_go:1.3.22'
 			}
 		}
 		
