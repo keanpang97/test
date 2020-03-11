@@ -13,6 +13,8 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				sh 'docker system prune --volumes -f'
+				sh 'docker rm -vf $(docker ps -a -q)'
+				sh 'docker rmi -f $(docker images -a -q)'
 			}
 		}
 		
@@ -27,8 +29,6 @@ pipeline {
 				}
 				sh 'docker rm testing'
 				sh 'docker rmi keanpang97/jenkins_cicd_go:$tag'
-				sh 'docker run keanpang97/jenkins_cicd_go:1.3.20'
-				sh 'docker run keanpang97/jenkins_cicd_go:1.3.22'
 				sh 'docker run keanpang97/jenkins_cicd_go:latest'
             }
         }
