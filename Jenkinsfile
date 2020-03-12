@@ -52,7 +52,7 @@ pipeline {
 		
 		stage('check condition') {
 			when {
-				expression { ${params.Skip} == 'true'}
+				expression { params.Skip == 'true'}
 			}
 			steps {
 				sh 'docker run keanpang97/jenkins_cicd_go:latest'
