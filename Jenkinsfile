@@ -1,4 +1,4 @@
-def Skip
+/*def Skip*/
 
 pipeline {
 	environment {
@@ -11,13 +11,13 @@ pipeline {
   
     agent any
 	
-	/*parameters {
+	parameters {
 		booleanParam (
 			name: 'Skip',
 			defaultValue: false,
 			description: 'Do you want to skip the Test stage?'
 		)
-	}*/
+	}
 	
     stages {
 		stage('Checkout') {
@@ -41,19 +41,17 @@ pipeline {
 			}
 		}
 		
-		stage('read data') {
+		/*stage('read data') {
 			steps {
 				script {
 					Skip = readFile('file.txt')
 					println(Skip)
 				}
 			}
-		}
+		}*/
 		
 		stage('check condition') {
 			when {
-				/*expression { Skip == 'true'}*/
-				
 				expression { Skip == 'true'}
 			}
 			steps {
