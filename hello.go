@@ -2,23 +2,14 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
-	counter := 1
+	greeting := hello("Kean Pang")
+	fmt.Println(greeting)
 
-	for counter == 1 {
-		greeting := hello("Kean Pang")
-		fmt.Println(greeting)
-
-		time.Sleep(2 * time.Second)
-
-		total := sum(4, 5)
-		fmt.Println(total)
-
-		time.Sleep(2 * time.Second)
-	}
+	total := sum(4, 5)
+	fmt.Println(total)
 }
 
 func hello(user string) string {
