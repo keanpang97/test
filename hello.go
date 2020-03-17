@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"function"
+	"functioning"
 )
 
 func main() {
-	greeting := function.Hello("Kean Pang")
+	greeting := functioning.Hello("Kean Pang")
 	fmt.Println(greeting)
 
-	total := function.Sum(4, 5)
+	total := functioning.Sum(4, 5)
 	fmt.Println(total)
 }
